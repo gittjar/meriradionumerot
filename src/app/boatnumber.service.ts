@@ -12,7 +12,11 @@ export class BoatnumberService {
 
   public getBoats(): Observable<BoatNumberInformation>
   {
-    const base_url = 'www.google.fi';
+    // this ./api points to file: proxy.conf.json
+    // needs also configure to angular.json -file
+    // see README.md
+    
+    const base_url = './api';
     return this.http.get<BoatNumberInformation>(base_url);
   }
 
