@@ -5,5 +5,7 @@
 
 <p>numbers works!</p>
 <li *ngFor="let x of boatInfo.value">
-    <span>{{x.ID}}</span>
+    <span>SHIP ID:{{x.ID}} - MMSI Number: {{x.MMSINumber}} - SHIP NAME: <b>{{x.ShipName}}</b> - 
+        SHIP CALL SIGN: {{x.ShipCallSign}}
+    </span>
 </li>

@@ -1,3 +1,6 @@
 export interface BoatNumber {
-    ID: Number;  
+    ID: Number;
+    MMSINumber: String;
+    ShipName: String;
+    ShipCallSign: String;
 }
