@@ -1,26 +1,31 @@
 
-<br><br><br>
-<br><br><br>
-<br><br><br>
-
 <section class="infotable">
+    <h3>Tiedot ovat Traficomin avointa dataa. Tiedot päivittyvät kerran vuorokaudessa.</h3>
+    <p>Tämän webbiapin teki Jarno .NET22S</p>
 
-    <table *ngFor="let id of [1]; let i = index;" class="table table-striped border-dark">
-    
+    <input
+    type="text"
+    [(ngModel)]="term"
+    class="searchTerm"
+    placeholder="Kirjoita hakusana.."
+  />
+
+    <table *ngFor="let id of [1]; let i = index;" class="table">
+
         <thead>
         <tr>
           <!-- <th class="id-kapea">Aluksen ID</th> --> 
             <th>Aluksen nimi</th>
-            <th>Aluksen tunnus</th>
             <th>Aluksen meriradio nro</th>
+            <th>Aluksen tunnus</th>
         </tr>
         </thead>
         <tbody>
         <tr>
          <!--  <td><li *ngFor="let x of boatInfo.value | paginate: {itemsPerPage: 30, currentPage: p[i]}">{{ x.ID }}</li></td> --> 
-            <td><li *ngFor="let x of boatInfo.value | paginate: {itemsPerPage: 30, currentPage: p[i]}">{{ x.ShipName }}</li></td>
-            <td><li *ngFor="let x of boatInfo.value | paginate: {itemsPerPage: 30, currentPage: p[i]}">{{ x.ShipCallSign }}</li></td>
-            <td><li *ngFor="let x of boatInfo.value | paginate: {itemsPerPage: 30, currentPage: p[i]}">{{ x.MMSINumber }}</li></td>
+            <td><li *ngFor="let x of boatInfo.value | filter: term | paginate: {itemsPerPage: 30, currentPage: p[i]}">{{ x.ShipName }}</li></td>
+            <td><li *ngFor="let x of boatInfo.value | filter: term | paginate: {itemsPerPage: 30, currentPage: p[i]}">{{ x.MMSINumber }}</li></td>
+            <td><li *ngFor="let x of boatInfo.value | filter: term | paginate: {itemsPerPage: 30, currentPage: p[i]}">{{ x.ShipCallSign }}</li></td>
         </tr>
         </tbody>
         <pagination-controls (pageChange)="p[i] = $event"></pagination-controls> 
@@ -31,7 +36,6 @@
 
 
     
-    <h3>Tiedot ovat Traficomin avointa dataa, päivittyy kerran vuorokaudessa.</h3>
 
 <!-- (FOR TESTING)
 <table>

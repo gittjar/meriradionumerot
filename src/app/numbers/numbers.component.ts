@@ -15,6 +15,9 @@ export class NumbersComponent implements OnInit {
   //id: number[] = [];
   p: number[] = [];
   collection: any[] = [];
+  term = '';
+  searchTerm = '';
+
 
 
 
