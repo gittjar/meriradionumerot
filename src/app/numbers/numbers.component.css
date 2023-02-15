@@ -7,6 +7,19 @@ li {
     list-style-type: none;
 }
 
-.id-kapea{
-    width: 90px;
+.alaviiva{
+    border-bottom: 1px rgb(116, 116, 116) solid;
+}
+
+.searchTerm {
+    width: 220px;
+    height: 45px;
+    border-top: 1px rgb(17, 65, 239) solid;
+    border-bottom: 4px rgb(14, 55, 203) solid;
+    border-left: none;
+    border-right: none;
+    background-color: rgb(240, 245, 249);
+    font-weight: 700;
+    padding: 5px;
+   
 }
