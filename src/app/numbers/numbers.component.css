@@ -1,14 +1,18 @@
-.infotable{
+.infotable {
     margin-left: 1%;
     margin-right: 1%;
+  
+
+
 }
 
 li {
     list-style-type: none;
 }
 
-.alaviiva{
-    border-bottom: 1px rgb(116, 116, 116) solid;
+
+.boats{
+    width: 560px;
 }
 
 .searchTerm {
@@ -20,6 +24,25 @@ li {
     border-right: none;
     background-color: rgb(240, 245, 249);
     font-weight: 700;
-    padding: 5px;
-   
+    padding: 5px;  
 }
+
+.searchTerm:focus{
+    outline: none;
+    background-color: rgb(231, 232, 233);
+
+}
+
+.paginationcolor ::ng-deep .ngx-pagination .current {
+    background: rgb(49, 2, 152);
+    border-radius: 10px;
+  }
+
+
+  @media only screen and (max-width: 768px) {
+  
+    .boats, .searchTerm{
+        width: 100%;
+    }
+    
+  }

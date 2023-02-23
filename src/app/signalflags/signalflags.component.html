@@ -1,0 +1,30 @@
+
+
+<section class="main">
+    
+            <section class="flags_alphas">
+                <h1>Signaaliliput, kirjaimet ja käyttötarkoitukset</h1>
+        <div class="card mb-3" style="max-width: 540px;" *ngFor="let x of flagsaddress">
+            <div class="row g-0">
+            <div class="col-md-4">
+            
+                <figure class="signalflag img-fluid rounded-start"><img src="{{x.picture}}"></figure>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">{{x.alphabeth}} - {{x.NatoAnsi}}</h5>
+                <p class="card-text">{{x.information}}</p>
+                <p class="card-text"><small class="text-muted">{{x.alphabethFin}} - {{x.alphabethSve}}</small></p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+<!--NUMBERS FLAGS COMPONENT-->
+        <section class="flags_numbers">
+            <app-numberflags></app-numberflags>
+        </section>
+    
+
+</section>

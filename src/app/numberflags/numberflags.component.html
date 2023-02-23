@@ -1,0 +1,16 @@
+<h1>Numerot, korvausviirit ja vastausviiri</h1>
+<div class="card mb-3" style="max-width: 540px;" *ngFor="let x of numberflagsaddress">
+    <div class="row g-0">
+    <div class="col-md-4">
+    
+        <figure class="numberflag img-fluid rounded-start"><img src="{{x.picture}}"></figure>
+    </div>
+    <div class="col-md-8">
+        <div class="card-body">
+        <h2 class="card-title">{{x.flagnumber}}</h2>
+        <h2 class="card-text">{{x.information}}</h2>
+        <p class="card-text"><small class="text-muted"></small></p>
+        </div>
+    </div>
+    </div>
+</div>

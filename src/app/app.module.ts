@@ -12,9 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
-
-
+import { SignalflagsComponent } from './signalflags/signalflags.component';
+import { NumberflagsComponent } from './numberflags/numberflags.component';
 
 
 
@@ -23,9 +22,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     AppComponent,
     NavbarComponent,
     NumbersComponent,
+    SignalflagsComponent,
+    NumberflagsComponent,
 
    
-    
   ],
   imports: [
     BrowserModule,
