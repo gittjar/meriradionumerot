@@ -9,5 +9,5 @@ Small WebApp for boat captains.
 
 - Check ships signal numbers
 - Signal flags
-- Ship register
+- Ship register information
 - ...
