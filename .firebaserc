@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-web-applications": {
+      "hosting": {
+        "meriradionumerot-app": [
+          "boatcaptain"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-web-applications"
+  }
+}
