@@ -7,13 +7,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NumbersComponent } from './numbers/numbers.component';
 
-// mat modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SignalflagsComponent } from './signalflags/signalflags.component';
 import { NumberflagsComponent } from './numberflags/numberflags.component';
+import { ShipsignalnumberComponent } from './shipsignalnumber/shipsignalnumber.component';
 
 
 
@@ -24,6 +24,7 @@ import { NumberflagsComponent } from './numberflags/numberflags.component';
     NumbersComponent,
     SignalflagsComponent,
     NumberflagsComponent,
+    ShipsignalnumberComponent,
 
    
   ],
