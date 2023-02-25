@@ -14,6 +14,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SignalflagsComponent } from './signalflags/signalflags.component';
 import { NumberflagsComponent } from './numberflags/numberflags.component';
 import { ShipsignalnumberComponent } from './shipsignalnumber/shipsignalnumber.component';
+import { AlusrekisteriComponent } from './alusrekisteri/alusrekisteri.component';
 
 
 
@@ -25,6 +26,7 @@ import { ShipsignalnumberComponent } from './shipsignalnumber/shipsignalnumber.c
     SignalflagsComponent,
     NumberflagsComponent,
     ShipsignalnumberComponent,
+    AlusrekisteriComponent,
 
    
   ],
