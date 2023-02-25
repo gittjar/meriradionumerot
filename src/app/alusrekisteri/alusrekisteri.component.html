@@ -1,0 +1,36 @@
+
+<section class="infotable">
+    <h3>Datan tuottaa Traficom.</h3>
+    <input
+    type="text"
+    [(ngModel)]="term"
+    class="searchTerm"
+    placeholder="Kirjoita hakusana.."
+  />
+
+    <table *ngFor="let id of [1]; let i = index;" class="table boats">
+
+        <thead>
+        <tr>
+          <!-- <th class="id-kapea">Aluksen ID</th> --> 
+            <th class="th1">Aluksen tiedot</th>
+            <th class="th2">Satamapaikka</th>
+            <th class="th3">Pituus (m)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+         <!--  <td><li *ngFor="let x of boatInfo.value | paginate: {itemsPerPage: 30, currentPage: p[i]}">{{ x.ID }}</li></td> --> 
+          <td><li *ngFor="let x of alusaddress | filter: term | paginate: {itemsPerPage: 30, currentPage: p[i]}">Alus: <b>{{x.nimi}}</b> Rakennuspaikka: <b>{{x.Rakennuspaikka}}</b> Rakennettu: <b>{{x.Rakennusvuosi}}</b></li></td>
+            <td><li *ngFor="let x of alusaddress | filter: term | paginate: {itemsPerPage: 30, currentPage: p[i]}"><b>{{x.aluksen_satamapaikka}}</b></li></td>
+            <td><li *ngFor="let x of alusaddress | filter: term | paginate: {itemsPerPage: 30, currentPage: p[i]}"><b>{{x.Pituus}}</b></li></td>
+
+        </tr>
+        </tbody>
+        <pagination-controls class="paginationcolor" (pageChange)="p[i] = $event"></pagination-controls> 
+
+        
+
+        </table>
+</section>
+
