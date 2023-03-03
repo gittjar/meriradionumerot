@@ -14,6 +14,8 @@ export class ShipsignalnumberComponent implements OnInit {
   collection: any[] = [];
   term = '';
   searchTerm = '';
+  AlusLista: any;
+
   
   ssnaddress: ShipSignalNumber [] = [];
 
@@ -29,4 +31,18 @@ export class ShipsignalnumberComponent implements OnInit {
     this.getShipSignalNumber();
   }
 
+/* NOT IN USE NOW
+
+  getAluksienSignal(): void {
+    this.httpservice.getAlusSignal().subscribe((data: any) => {
+      this.AlusLista = data;
+    },
+    (error: any) => {
+      console.log('http-error:');
+      console.log(error);
+    });
+
+    */
+
 }
+
