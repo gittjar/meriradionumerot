@@ -1,6 +1,13 @@
 
 <section class="infotable">
+  <h1>Meriradionumerot</h1>
     <h3>Datan tuottaa Traficom.</h3>
+
+<!-- NOT IN USE
+    <p *ng="let ship of AlusLista">{{ship.ShipName}}</p>
+-->
+
+
     <input
     type="text"
     [(ngModel)]="term"
@@ -28,7 +35,7 @@
         </tbody>
         <pagination-controls class="paginationcolor" (pageChange)="p[i] = $event"></pagination-controls> 
 
-        
-
         </table>
 </section>
+
+

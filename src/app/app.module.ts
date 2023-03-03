@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NumbersComponent } from './numbers/numbers.component';
+import { MatTableModule } from '@angular/material/table';
+import {  MatIconModule } from '@angular/material/icon';
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +18,9 @@ import { SignalflagsComponent } from './signalflags/signalflags.component';
 import { NumberflagsComponent } from './numberflags/numberflags.component';
 import { ShipsignalnumberComponent } from './shipsignalnumber/shipsignalnumber.component';
 import { AlusrekisteriComponent } from './alusrekisteri/alusrekisteri.component';
+import { MajakatComponent } from './majakat/majakat.component';
+import {MatSortModule} from '@angular/material/sort';
+
 
 
 
@@ -27,6 +33,7 @@ import { AlusrekisteriComponent } from './alusrekisteri/alusrekisteri.component'
     NumberflagsComponent,
     ShipsignalnumberComponent,
     AlusrekisteriComponent,
+    MajakatComponent,
 
    
   ],
@@ -37,9 +44,10 @@ import { AlusrekisteriComponent } from './alusrekisteri/alusrekisteri.component'
     BrowserAnimationsModule,
     FormsModule,
     NgxPaginationModule,
-    Ng2SearchPipeModule
-   
-
+    Ng2SearchPipeModule,
+    MatTableModule,
+    MatIconModule,
+    MatSortModule
 
     
   ],
