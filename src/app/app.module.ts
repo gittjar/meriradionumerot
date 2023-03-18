@@ -20,6 +20,7 @@ import { ShipsignalnumberComponent } from './shipsignalnumber/shipsignalnumber.c
 import { AlusrekisteriComponent } from './alusrekisteri/alusrekisteri.component';
 import { MajakatComponent } from './majakat/majakat.component';
 import {MatSortModule} from '@angular/material/sort';
+import { MeriradionumeroComponent } from './meriradionumero/meriradionumero.component';
 
 
 
@@ -34,6 +35,7 @@ import {MatSortModule} from '@angular/material/sort';
     ShipsignalnumberComponent,
     AlusrekisteriComponent,
     MajakatComponent,
+    MeriradionumeroComponent,
 
    
   ],

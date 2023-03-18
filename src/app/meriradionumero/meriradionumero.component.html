@@ -1,0 +1,12 @@
+Meriradion numerot!
+<!--
+<ul *ngFor="let meriradionumero of MeriradioList">
+
+    <li> {{meriradionumero.ID}}</li>
+</ul>
+-->
+
+<div *ngFor="let x of MeriradioList | keyvalue">
+    <div>{{x | json}}</div>
+    Object Key {{x.key}} and value: {{x.value}}
+</div>
