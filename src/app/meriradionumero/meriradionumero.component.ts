@@ -10,7 +10,7 @@ import { MeriradionumeroService } from '../meriradionumero.service';
 export class MeriradionumeroComponent implements OnInit {
 
   MeriradioList : any;
-  Meriradionumero = '/api';
+  //Meriradionumero = '/api';
   constructor (private hpservice : MeriradionumeroService) {}
 
   ngOnInit(): void {
@@ -18,10 +18,13 @@ export class MeriradionumeroComponent implements OnInit {
 
   }
 
+
   getMeriradionumero(): void {
     this.hpservice.getMeriradionumero().subscribe ((data: any) => {
-      this.MeriradioList = data;
-    })
+    this.MeriradioList = data;
+    });
+
+
   }
 
 }

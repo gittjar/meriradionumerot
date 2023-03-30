@@ -8,9 +8,9 @@ import { ShipSignalNumber } from './models/shipsignalnumber';
 })
 export class ShipsignalnumberService {
 
-  baseurl = 'https://raw.githubusercontent.com/gittjar/flags/main/shipsignalnumber.json';
+ baseurl = 'https://raw.githubusercontent.com/gittjar/flags/main/shipsignalnumber.json';
 
-  // private signalUrl = 'https://opendata.traficom.fi/api/v9/Alusrekisteri';
+  // baseurl = 'https://opendata.traficom.fi/api/v9/Alusrekisteri';
 
 
   constructor(private http: HttpClient) {}

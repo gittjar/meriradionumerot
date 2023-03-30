@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NumbersComponent } from './numbers/numbers.component';
 import { MatTableModule } from '@angular/material/table';
@@ -19,8 +19,9 @@ import { NumberflagsComponent } from './numberflags/numberflags.component';
 import { ShipsignalnumberComponent } from './shipsignalnumber/shipsignalnumber.component';
 import { AlusrekisteriComponent } from './alusrekisteri/alusrekisteri.component';
 import { MajakatComponent } from './majakat/majakat.component';
-import {MatSortModule} from '@angular/material/sort';
+import { MatSortModule } from '@angular/material/sort';
 import { MeriradionumeroComponent } from './meriradionumero/meriradionumero.component';
+
 
 
 
@@ -36,6 +37,7 @@ import { MeriradionumeroComponent } from './meriradionumero/meriradionumero.comp
     AlusrekisteriComponent,
     MajakatComponent,
     MeriradionumeroComponent,
+ 
     
 
    
