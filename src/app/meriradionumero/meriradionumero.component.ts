@@ -9,20 +9,30 @@ import { MeriradionumeroService } from '../meriradionumero.service';
 })
 export class MeriradionumeroComponent implements OnInit {
 
-  MeriradioList : any;
+  MeriradioList: any;
   //Meriradionumero = '/api';
-  constructor (private hpservice : MeriradionumeroService) {}
+  constructor (private hpservice : MeriradionumeroService) {
+   // this.hpservice.getBoatResults();
+  }
 
   ngOnInit(): void {
-    this.getMeriradionumero();
+   this.getMeriradionumero();
 
   }
+
+  /*
+  getBoatResultNum(){
+    return this.hpservice.boatresult;
+  }*/
 
 
   getMeriradionumero(): void {
     this.hpservice.getMeriradionumero().subscribe ((data: any) => {
     this.MeriradioList = data;
     });
+
+
+
 
 
   }
