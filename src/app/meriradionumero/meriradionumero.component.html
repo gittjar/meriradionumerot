@@ -1,9 +1,13 @@
 Meriradion numerot!
 
 
-<ul *ngFor="let meriradionumero of MeriradioList.value">
+<ul *ngFor="let meriradionumero of MeriradioList?.value">
 
-    <li> {{meriradionumero.ID}}</li>
+    <li> {{meriradionumero?.ID}}</li>
+</ul>
+
+<ul> 
+    <li *ngFor="let license of shipRadioLicenses">{{ license.ShipName }}</li>     
 </ul>
 
 

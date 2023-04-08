@@ -7,3 +7,9 @@ export interface Value {
     ShipName: String;
     ShipCallSign: String;
   }
+  export interface ShipRadioLicense {
+    ID: number;
+    MMSINumber: string;
+    ShipName: string;
+    ShipCallSign: string;
+    }

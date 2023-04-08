@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { ShipSignalNumber, Value } from './models/shipsignalnumber';
+import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -25,23 +25,26 @@ export class MeriradionumeroService {
       //headers.append('Accept', 'application/json');
       */
 
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Accept': 'application/json'
+        })
+      };
+
+
+
   //  const meriradionumero = this.meriradionumeroHTTP.get(this.baseurl, {headers: headers});
   // const meriradionumero = this.meriradionumeroHTTP.get(this.baseurl, {responseType: 'text'});
-  const meriradionumero = this.meriradionumeroHTTP.get('/api');
+  const meriradionumero = this.meriradionumeroHTTP.get('/api', httpOptions);
     return meriradionumero;
   }
-/*
-  public boatresult: Value[] = [];
-  Base_url = '/api';
 
-  getBoatResults(): void{
-    this.meriradionumeroHTTP.get<ShipSignalNumber[]>(this.Base_url)
-    .subscribe((resp) => {
-      this.boatresult;
-      })
-      */
+
+  getBoatResults(): Observable<any>{
+    const url = '/api';
+    return this.meriradionumeroHTTP.get<any>(url);   
   }
 
 
-
+}
 

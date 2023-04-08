@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MeriradionumeroService } from '../meriradionumero.service';
+import { ShipRadioLicense } from '../models/shipsignalnumber';
+
 
 
 @Component({
@@ -10,20 +12,23 @@ import { MeriradionumeroService } from '../meriradionumero.service';
 export class MeriradionumeroComponent implements OnInit {
 
   MeriradioList: any;
+  shipRadioLicenses: ShipRadioLicense[] | undefined;
+
+
   //Meriradionumero = '/api';
   constructor (private hpservice : MeriradionumeroService) {
-   // this.hpservice.getBoatResults();
   }
 
   ngOnInit(): void {
-   this.getMeriradionumero();
-
+   //this.getMeriradionumero();
+   // this.getBoatResultNum();
+   this.hpservice.getBoatResults().subscribe(res=> {
+    this.shipRadioLicenses = res.value;
+   })
   }
 
-  /*
-  getBoatResultNum(){
-    return this.hpservice.boatresult;
-  }*/
+  
+
 
 
   getMeriradionumero(): void {

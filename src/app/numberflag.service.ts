@@ -10,7 +10,6 @@ export class NumberflagService {
 
   numberflagsurl = 'https://raw.githubusercontent.com/gittjar/flags/main/numberflag.json';
 
-
   constructor(private http: HttpClient) { }
 
   getNumberFlag(): Observable <NumberFlag[]>
