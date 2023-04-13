@@ -7,7 +7,9 @@ export interface Value {
     ShipName: String;
     ShipCallSign: String;
   }
-  export interface ShipRadioLicense {
+  
+  export interface Meriradionumerot {
+    '@odata.type': string;
     ID: number;
     MMSINumber: string;
     ShipName: string;
