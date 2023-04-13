@@ -1,11 +1,9 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MeriradionumeroService } from '../meriradionumero.service';
 import { Meriradionumerot } from '../models/shipsignalnumber';
 import { Odata } from '../models/odata.model';
-
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-meriradionumero',
@@ -14,21 +12,16 @@ import { Odata } from '../models/odata.model';
 })
 export class MeriradionumeroComponent implements OnInit, OnDestroy {
 
-  MeriradioList: any;
- // shipRadioLicenses: ShipRadioLicense[] | undefined;
+MeriradioList: any;
 
- subscription!: Subscription;
- listMeriradionumerot: Meriradionumerot [] = [];
+subscription!: Subscription;
+listMeriradionumerot: Meriradionumerot [] = [];
 
   //Meriradionumero = '/api';
-  constructor (private hpservice : MeriradionumeroService) {
+  constructor (private hpservice : MeriradionumeroService, private _snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
-   //this.getMeriradionumero();
-   // this.getBoatResultNum();
-   //this.hpservice.getBoatResults().subscribe(res=> {
-   // this.shipRadioLicenses = res.value;
    this.getAllMeriradioList();
    }
 
@@ -44,32 +37,11 @@ export class MeriradionumeroComponent implements OnInit, OnDestroy {
         this.listMeriradionumerot = data.value.filter((item: Meriradionumerot) => {
           return !item['@odata.type'];
         });
-        let NameList = this.listMeriradionumerot.map(
-          (element: Meriradionumerot) => element.ID
-        );
-       // this.hpservice.existingUsernames = NameList;
-
-      },
-      error: (err: HttpErrorResponse) => {
-      },
-      complete: () => console.info('Get list complete'),
+        this._snackBar.open('Sisältö ladattu!', 'OK!', {duration: 3000, panelClass: ['green-snackbar']});
+      }, 
+        complete: () => console.info('Get list complete')
     });
   }
-  
-
-  
-
-
-
-  getMeriradionumero(): void {
-    this.hpservice.getMeriradionumero().subscribe ((data: any) => {
-    this.MeriradioList = data;
-    })
-
-
-
-
-
   }
-}
+
 

@@ -18,7 +18,7 @@ export class BoatnumberService {
 
    const base_url = '/api';
 
-   //const base_url = '/echo';
+   //const base_url = 'https://corsproxy.io/?https%3A%2F%2Fopendata.traficom.fi%2Fapi%2Fv8%2FMeriradionumerot%2F';
 
 
    let headers = new HttpHeaders({
@@ -28,8 +28,7 @@ export class BoatnumberService {
    headers.append('responseType', 'text');
    //headers.append('Content-Type', 'application/json');
    // headers.append('Accept', 'application/json');
-   
-    //const base_url = 'https://opendata.traficom.fi/api/v8/Meriradionumerot';
+  //const base_url = 'https://opendata.traficom.fi/api/v8/Meriradionumerot';
   return this.http.get<BoatNumberInformation>(base_url, {headers: headers});
 
 /*

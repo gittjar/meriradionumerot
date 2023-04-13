@@ -9,6 +9,10 @@ import { Meriradionumerot } from '../models/shipsignalnumber';
 export class MeriradioItemComponent implements OnInit  {
 
   @Input() listMeriradionumerot: Meriradionumerot[] = [];
+  p: number[] = [];
+  collection: any[] = [];
+  term = '';
+  searchTerm = '';
 
   constructor() {}
 

@@ -10,9 +10,9 @@ import { MeriradionumeroComponent } from './meriradionumero/meriradionumero.comp
 const routes: Routes = [
   // meriradio; not in use now --> connect to traficom
 {path : 'meriradio', component: NumbersComponent}, // THIS IS NOT IN USE
-{path : 'meriradio2', component: MeriradionumeroComponent}, // THIS IS CONNECTED TO TRAFICOM
+{path : 'meriradio2', component: MeriradionumeroComponent}, // THIS IS CONNECTED TO TRAFICOM !
 {path : 'signaaliliput', component: SignalflagsComponent},
-{path : 'meriradionumerot', component: ShipsignalnumberComponent},
+{path : 'meriradionumerot', component: ShipsignalnumberComponent}, // THIS IS NOT IN USE
 {path : 'alusrekisteri', component: AlusrekisteriComponent},
 {path : 'majakat', component: MajakatComponent}
 

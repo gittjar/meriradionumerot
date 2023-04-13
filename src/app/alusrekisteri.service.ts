@@ -9,7 +9,7 @@ import { Alus } from './models/alusrekisteri';
 export class AlusrekisteriService {
 
 
-  //alusrekisteriurl = 'https://opendata.traficom.fi/api/v9/Alusrekisteri';
+  //alusrekisteriurl = 'https://corsproxy.io/?https%3A%2F%2Fopendata.traficom.fi%2Fapi%2Fv9%2FAlusrekisteri';
   alusrekisteriurl = 'https://raw.githubusercontent.com/gittjar/flags/main/alusrekisteri.json';
 
   constructor(private http: HttpClient) { }

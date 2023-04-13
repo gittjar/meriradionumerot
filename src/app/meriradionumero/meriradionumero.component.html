@@ -1,16 +1,8 @@
-Meriradion numerot!
-
-<!--
-
-<ul *ngFor="let meriradionumero of MeriradioList?.value">
-
-    <li> {{meriradionumero?.ID}}</li>
-</ul>
--->
 
 <ng-container *ngIf="listMeriradionumerot">
     <app-meriradio-item [listMeriradionumerot]="listMeriradionumerot"></app-meriradio-item>
   </ng-container>
+  
 
 <!--
 <div *ngFor="let x of MeriradioList | keyvalue">

@@ -1,15 +1,55 @@
+<!--
 <ul class="list-group mt-3" *ngIf="listMeriradionumerot.length > 0">
     <li class="list-group-item" *ngFor="let x of listMeriradionumerot">
 
         <div class="item">
-          <h5>{{ x.ID }}</h5>
-          <span class="">[{{ x.MMSINumber }}] - {{ x.ShipName}}</span>
+          <h5>ID: {{ x.ID }}</h5>
+          <span class="">Meriradion numero:[{{ x.MMSINumber }}] - Aluksen nimi: {{ x.ShipName}}</span>
         </div>
         <img
           src="https://via.placeholder.com/50"
           class="img-responsivealt="
           alt="Image"
-        />
-    
+        />  
     </li>
   </ul>
+-->
+
+  <section class="infotable">
+    <h1>Meriradionumerot</h1>
+      <h3>Datan tuottaa Traficom. <br>Päivitys kerran päivässä.</h3>
+  
+  <!-- NOT IN USE
+      <p *ng="let ship of AlusLista">{{ship.ShipName}}</p>
+  -->
+  
+  
+      <input
+      type="text"
+      [(ngModel)]="term"
+      class="searchTerm"
+      placeholder="Kirjoita hakusana.."
+    />
+  
+      <table *ngFor="let id of [1]; let i = index;" class="table boats">
+  
+          <thead>
+          <tr>
+            <!-- <th class="id-kapea">Aluksen ID</th> --> 
+              <th>Aluksen nimi ja meriradion nro</th>
+              <th>Aluksen tunnus</th>
+  
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+           <!--  <td><li *ngFor="let x of boatInfo.value | paginate: {itemsPerPage: 30, currentPage: p[i]}">{{ x.ID }}</li></td> --> 
+              <td><li *ngFor="let x of listMeriradionumerot | filter: term | paginate: {itemsPerPage: 30, currentPage: p[i]}">{{ x.ShipName }} [ {{ x.MMSINumber }} ]</li></td>
+              <td><li *ngFor="let x of listMeriradionumerot | filter: term | paginate: {itemsPerPage: 30, currentPage: p[i]}">{{ x.ShipCallSign }}</li></td>
+  
+          </tr>
+          </tbody>
+          <pagination-controls class="paginationcolor" (pageChange)="p[i] = $event"></pagination-controls> 
+  
+          </table>
+  </section>

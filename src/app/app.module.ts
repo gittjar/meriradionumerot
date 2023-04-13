@@ -7,7 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NumbersComponent } from './numbers/numbers.component';
 import { MatTableModule } from '@angular/material/table';
-import {  MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -54,8 +55,8 @@ import { MeriradioItemComponent } from './meriradio-item/meriradio-item.componen
     Ng2SearchPipeModule,
     MatTableModule,
     MatIconModule,
-    MatSortModule
-
+    MatSortModule,
+    MatSnackBarModule,
     
   ],
   providers: [
