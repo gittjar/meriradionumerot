@@ -21,6 +21,7 @@ import { AlusrekisteriComponent } from './alusrekisteri/alusrekisteri.component'
 import { MajakatComponent } from './majakat/majakat.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MeriradionumeroComponent } from './meriradionumero/meriradionumero.component';
+import { MeriradioItemComponent } from './meriradio-item/meriradio-item.component';
 
 
 
@@ -37,6 +38,7 @@ import { MeriradionumeroComponent } from './meriradionumero/meriradionumero.comp
     AlusrekisteriComponent,
     MajakatComponent,
     MeriradionumeroComponent,
+    MeriradioItemComponent,
  
     
 

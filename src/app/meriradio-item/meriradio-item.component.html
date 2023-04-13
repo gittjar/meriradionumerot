@@ -1,0 +1,15 @@
+<ul class="list-group mt-3" *ngIf="listMeriradionumerot.length > 0">
+    <li class="list-group-item" *ngFor="let x of listMeriradionumerot">
+
+        <div class="item">
+          <h5>{{ x.ID }}</h5>
+          <span class="">[{{ x.MMSINumber }}] - {{ x.ShipName}}</span>
+        </div>
+        <img
+          src="https://via.placeholder.com/50"
+          class="img-responsivealt="
+          alt="Image"
+        />
+    
+    </li>
+  </ul>

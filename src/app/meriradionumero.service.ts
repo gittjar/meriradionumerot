@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, of, Subject } from 'rxjs';
+import { delay } from 'rxjs/operators'
+
+import { Odata } from './models/odata.model';
+import { Meriradionumerot } from './models/shipsignalnumber';
 
 
 @Injectable({
@@ -8,11 +12,28 @@ import { Observable } from 'rxjs';
 })
 export class MeriradionumeroService {
 
+ private API_URL: string = 'https://corsproxy.io/?https%3A%2F%2Fopendata.traficom.fi%2Fapi%2Fv8%2FMeriradionumerot%2F';
+ //private API_URL: string = '/api';
+
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    }),
+  };
+
   constructor(private meriradionumeroHTTP: HttpClient) { }
 
+ getMeriradioList(): Observable<Odata> {
+  return this.meriradionumeroHTTP.get<Odata>(this.API_URL, this.httpOptions);
+}
 
-  //baseurl = 'https://opendata.traficom.fi/api/v8/Meriradionumerot/';
- // baseurl = '/api';
+
+
+
+
+
+
 
   getMeriradionumero():any {
     /*

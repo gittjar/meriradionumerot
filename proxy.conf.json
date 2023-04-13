@@ -1,7 +1,7 @@
 
 {
   "/api": {
-    "target": "https://opendata.traficom.fi/api/v8/Meriradionumerot/",
+    "target": "https://opendata.traficom.fi/api/v9/Meriradionumerot/?$format=json",
     "secure": false,
     "pathRewrite": {
       "^/api": ""
