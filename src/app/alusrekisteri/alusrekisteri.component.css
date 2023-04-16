@@ -16,6 +16,12 @@ li:nth-child(odd) {background: #d4d4d4}
     width: 100%;
 }
 
+.searchbar {
+    display: flex;
+    flex-direction: row;
+    padding: 3px;
+}
+
 .searchTerm {
     width: 220px;
     height: 45px;
@@ -33,9 +39,6 @@ li:nth-child(odd) {background: #d4d4d4}
     background-color: rgb(238, 238, 238);
     border-bottom: 4px rgb(14, 55, 203) dashed;
     border-top: 2px rgb(17, 65, 239) solid;
-
-
-
 }
 
 .searchTerm:focus{
@@ -43,6 +46,8 @@ li:nth-child(odd) {background: #d4d4d4}
     background-color: rgb(231, 232, 233);
 
 }
+
+button { margin-left: 1%;}
 
 .paginationcolor ::ng-deep .ngx-pagination .current {
     background: rgb(49, 2, 152);

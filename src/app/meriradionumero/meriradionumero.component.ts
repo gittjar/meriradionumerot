@@ -37,7 +37,7 @@ listMeriradionumerot: Meriradionumerot [] = [];
         this.listMeriradionumerot = data.value.filter((item: Meriradionumerot) => {
           return !item['@odata.type'];
         });
-        this._snackBar.open('Sisältö ladattu!', 'OK!', {duration: 3000, panelClass: ['green-snackbar']});
+        this._snackBar.open('Sisältö ladattu Traficomista!', 'OK!', {duration: 3000, panelClass: ['green-snackbar']});
       }, 
         complete: () => console.info('Get list complete')
     });
