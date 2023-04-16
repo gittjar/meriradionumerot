@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Alus } from '../models/alusrekisteri'
-import { AlusrekisteriService } from '../alusrekisteri.service';
+import { AlusService } from '../alus.service';
+import { OdataAlus } from '../models/odata.alus.model';
+import { Subscription } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-alusrekisteri',
@@ -14,15 +17,51 @@ export class AlusrekisteriComponent implements OnInit {
   term = '';
   searchTerm = '';
 
-  alusaddress: Alus [] = [];
+  constructor (private httpservice : AlusService, private _snackBar: MatSnackBar) {}
+  
+  subscription!: Subscription;
+  Aluslist : Alus[] = [];
 
-  constructor (private httpservice : AlusrekisteriService) {}
-  
-  getAlus(): void {
-    this.httpservice.getAlus().subscribe(alusaddress => this.alusaddress = alusaddress);
-  }
-  
+  panelOpenState = false;
+
   ngOnInit(): void {
-    this.getAlus();
+    this.getAllAlus();
   }
+
+  getAllAlus() {
+    this.httpservice.getAlusList().subscribe({
+      next: (data: OdataAlus) => {
+        this.Aluslist = data.value.filter((item: Alus) => {
+          return !item['@odata.type'];
+        });
+       this._snackBar.open('Sisältö ladattu Traficomista!', 'OK!', {duration: 3000, panelClass: ['green-snackbar']});
+      }, 
+        complete: () => console.info('Get list complete')
+    });
   }
+
+    // Button functions
+    changeTermHamina() {
+      this.term = 'Hamina';
+    }
+    changeTermHelsinki() {
+      this.term = 'Helsinki';
+    }
+    changeTermOulu() {
+      this.term = 'Oulu';
+    }
+    changeTermPorvoo() {
+      this.term = 'Porvoo';
+    }
+    changeTermTurku() {
+      this.term = 'Turku';
+    }
+
+
+
+
+
+
+
+  }
+  

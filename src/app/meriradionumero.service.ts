@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Odata } from './models/odata.model';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -23,7 +22,7 @@ export class MeriradionumeroService {
 
   constructor(private meriradionumeroHTTP: HttpClient) { }
 
- getMeriradioList(): Observable<Odata> {
+  getMeriradioList(): Observable<Odata> {
   return this.meriradionumeroHTTP.get<Odata>(this.API_URL);
 }
 

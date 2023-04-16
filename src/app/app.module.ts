@@ -17,12 +17,17 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SignalflagsComponent } from './signalflags/signalflags.component';
 import { NumberflagsComponent } from './numberflags/numberflags.component';
-import { ShipsignalnumberComponent } from './shipsignalnumber/shipsignalnumber.component';
 import { AlusrekisteriComponent } from './alusrekisteri/alusrekisteri.component';
 import { MajakatComponent } from './majakat/majakat.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MeriradionumeroComponent } from './meriradionumero/meriradionumero.component';
 import { MeriradioItemComponent } from './meriradio-item/meriradio-item.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+
+import {MatExpansionModule} from '@angular/material/expansion';
+
+
 
 
 
@@ -35,7 +40,6 @@ import { MeriradioItemComponent } from './meriradio-item/meriradio-item.componen
     NumbersComponent,
     SignalflagsComponent,
     NumberflagsComponent,
-    ShipsignalnumberComponent,
     AlusrekisteriComponent,
     MajakatComponent,
     MeriradionumeroComponent,
@@ -57,6 +61,9 @@ import { MeriradioItemComponent } from './meriradio-item/meriradio-item.componen
     MatIconModule,
     MatSortModule,
     MatSnackBarModule,
+    NgbModule,
+    NgbCollapseModule,
+    MatExpansionModule
     
   ],
   providers: [
