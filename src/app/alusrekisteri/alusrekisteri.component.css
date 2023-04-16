@@ -60,6 +60,19 @@ button { margin-left: 1%;}
     .boats, .searchTerm{
         width: 100%;
     }
+    .searchbar {
+        display: flex;
+        flex-direction: column;
+        padding: 3px;
+    }
+    button {
+        margin: 2px;
+    }
+    .matnappi {
+        width: 65px;
+        font-size: 0.5rem;
+
+    }
     
   }
 
