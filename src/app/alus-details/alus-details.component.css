@@ -4,10 +4,11 @@
 
 .card {
     margin-bottom: 1%;
+    width: 20rem;
 }
 
 .btn {
-    border: 0.5px white solid;
+    border: 0.5px rgb(17, 16, 16) solid;
 }
 
 .btn-group { 
@@ -18,3 +19,14 @@
 mat-icon {
     padding-top: 2px;
 }
+
+/* Mobile CSS rules */ 
+@media only screen and (max-width: 425px) 
+{ 
+    .card, .btn-group{
+        margin-bottom: 1%;
+        width: 100%;
+    }
+
+ }
+

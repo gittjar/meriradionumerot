@@ -7,7 +7,7 @@
 
     <div class="btn-group" role="group" aria-label="Third group">
         <button type="button" class="btn btn-secondary" (click)="goPrevious()"><mat-icon aria-hidden="false" fontIcon="remove_circle_outline"></mat-icon></button>
-        <button class="btn btn-secondary"
+        <button class="btn btn-outline-secondary"
         (click)='goBack()'>
         Takaisin alusrekisteriin
         </button>
@@ -15,9 +15,9 @@
       </div>
 
     
-    <div class="card" style="width: 20rem;">
+    <div class="card">
         <div class="card-header">
-            <p class="card-text"><small class="text-body-secondary">Clicked minus or plus: {{currentIndex}}</small></p>
+            <p class="card-text"><small class="text-body-secondary">Aluksen ID: {{alusdetails?.ID}}</small></p>
 
             <h1>{{alusdetails?.nimi}}</h1>
           </div>
