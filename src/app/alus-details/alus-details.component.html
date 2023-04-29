@@ -1,0 +1,48 @@
+
+<section class="main">
+    <h1>{{pageTitle}}</h1>
+    <p>Datan tuottaa Traficom, päivitys kerran päivässä.</p>
+
+    <p *ngIf="alusdetails"></p>
+
+    <div class="btn-group" role="group" aria-label="Third group">
+        <button type="button" class="btn btn-secondary" (click)="goPrevious()"><mat-icon aria-hidden="false" fontIcon="remove_circle_outline"></mat-icon></button>
+        <button class="btn btn-secondary"
+        (click)='goBack()'>
+        Takaisin alusrekisteriin
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="goNext()"><mat-icon aria-hidden="false" fontIcon="add_circle_outline"></mat-icon></button>
+      </div>
+
+    
+    <div class="card" style="width: 20rem;">
+        <div class="card-header">
+            <p class="card-text"><small class="text-body-secondary">Clicked minus or plus: {{currentIndex}}</small></p>
+
+            <h1>{{alusdetails?.nimi}}</h1>
+          </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Tilakoodi: {{alusdetails?.Tilakoodi}}</li>
+          <li class="list-group-item">Ensirekisteröintipäivä: {{alusdetails?.Ensirekisterointipvm}}</li>
+          <li class="list-group-item">Rakennuspaikka: {{alusdetails?.Rakennuspaikka}}</li>
+          <li class="list-group-item">Aluksen satamapaikka: {{alusdetails?.aluksen_satamapaikka}}</li>
+          <li class="list-group-item">Kantavuus: {{alusdetails?.Kantavuus}}</li>
+          <li class="list-group-item">Jääluokkakoodi: {{alusdetails?.JaaluokkaKoodi}}</li>
+          <li class="list-group-item">Nettovetoisuus: {{alusdetails?.Nettovetoisuus}}</li>
+          <li class="list-group-item">Bruttovetoisuus: {{alusdetails?.Bruttovetoisuus}}</li>
+          <li class="list-group-item">Pituus: {{alusdetails?.Pituus}}</li>
+          <li class="list-group-item">Mallisyväys: {{alusdetails?.Mallisyvays}}</li>
+          <li class="list-group-item">Mallikorkeus: {{alusdetails?.Mallikorkeus}}</li>
+          <li class="list-group-item">Leveys: {{alusdetails?.Leveys}}</li>
+
+
+
+        </ul>
+        <div class="card-body">
+            <p class="card-text"><small class="text-body-secondary">Alus id: {{alusdetails?.alus_id}}</small></p>
+        </div>
+      </div>
+
+
+
+</section>

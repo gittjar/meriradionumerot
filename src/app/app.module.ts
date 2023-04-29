@@ -26,6 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 import {MatExpansionModule} from '@angular/material/expansion';
+import { AlusDetailsComponent } from './alus-details/alus-details.component';
 
 
 
@@ -44,6 +45,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MajakatComponent,
     MeriradionumeroComponent,
     MeriradioItemComponent,
+    AlusDetailsComponent,
  
     
 

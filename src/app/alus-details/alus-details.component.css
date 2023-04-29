@@ -1,0 +1,20 @@
+.main {
+    margin: 1%;
+}
+
+.card {
+    margin-bottom: 1%;
+}
+
+.btn {
+    border: 0.5px white solid;
+}
+
+.btn-group { 
+    width: 20rem;
+    margin-bottom: 5px;
+}
+
+mat-icon {
+    padding-top: 2px;
+}
