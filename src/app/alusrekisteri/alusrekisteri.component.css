@@ -16,6 +16,15 @@ li:nth-child(odd) {background: #d4d4d4}
     width: 100%;
 }
 
+a { color: rgb(17, 65, 239);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(14, 55, 203);
+    padding: 1px;
+}
+
 .searchbar {
     display: flex;
     flex-direction: row;
