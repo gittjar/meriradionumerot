@@ -1,0 +1,32 @@
+
+<section class="main">
+    <h1>Lokikirja</h1>
+    <p>Voit tehdä tänne havaintojasi tai merkintöjä. 
+        Tiedot tallentuu laitteesi paikalliseen muistiin.</p>
+        <p>Siirrä tärkeät tiedot itsellesi tiedostoihin.</p>
+
+        <div>
+            <div *ngIf="showAlert" class="badge text-bg-warning">Kenttä on tyhjä! Anna lokiteksti.</div>
+       
+            <input type="text" class="form-control" placeholder="Kirjoita lokiteksti.." [(ngModel)]="textInput" />
+            <button class="btn btn-outline-success" (click)="checkInput()">Lisää lokiteksti</button>
+            <button class="btn btn-outline-danger" (click)="removeItem()">Poista lokiteksti</button>
+          </div>
+<hr>
+<h3>Lokitiedot</h3>
+
+<article class="itemlist">
+<aside class="loki-item">
+    <div  *ngFor="let lokitext of items">{{lokitext}} </div>
+</aside>
+
+<aside class="loki-item"><div *ngFor="let timestamp of timestamps">{{timeStampBlank}} {{ timestamp | date:'HH:mm:ss a / d.M.yyyy' }} </div>
+</aside>
+
+</article>      
+
+<br>
+        <!--
+        <div *ngFor="let date of aikaLeima">{{date | date:'HH:mm a / d.M.yyyy'}}</div>
+            -->
+</section>

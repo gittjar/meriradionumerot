@@ -6,15 +6,17 @@ import { AlusrekisteriComponent } from './alusrekisteri/alusrekisteri.component'
 import { MajakatComponent } from './majakat/majakat.component';
 import { MeriradionumeroComponent } from './meriradionumero/meriradionumero.component';
 import { AlusDetailsComponent } from './alus-details/alus-details.component';
+import { LokikirjaComponent } from './lokikirja/lokikirja.component';
 
 const routes: Routes = [
   // meriradio; not in use now --> connect to traficom
 {path : 'meriradio2', component: NumbersComponent}, // THIS IS NOT IN USE
 {path : 'meriradio', component: MeriradionumeroComponent}, // THIS IS CONNECTED TO TRAFICOM !
 {path : 'signaaliliput', component: SignalflagsComponent},
-{path : 'alusrekisteri', component: AlusrekisteriComponent},
+{path : 'alusrekisteri', component: AlusrekisteriComponent}, // THIS IS CONNECTED TO TRAFICOM !
 {path : 'majakat', component: MajakatComponent},
 {path : 'alus-details/:id', component: AlusDetailsComponent},
+{path : 'lokikirja', component: LokikirjaComponent},
 
 ];
 
