@@ -68,9 +68,9 @@
         <tbody>
         <tr>
          <!--  <td><li *ngFor="let x of boatInfo.value | paginate: {itemsPerPage: 30, currentPage: p[i]}">{{ x.ID }}</li></td> --> 
-          <td><li *ngFor="let x of Aluslist | filter: term | paginate: {itemsPerPage: 30, currentPage: p[i]}">
+          <td><li *ngFor="let x of Aluslist | filter: term | paginate: {itemsPerPage: 100, currentPage: p[i]}">
             
-            
+            <span *ngIf="x.Rakennuspaikka" class="alustiedot">
             Alus: 
             <a href="#" [routerLink]="['/alus-details/', x.ID]">
             <b>{{x.nimi}}</b> 
@@ -78,7 +78,10 @@
           
           Rakennuspaikka: <b>{{x.Rakennuspaikka}}</b> 
        
-          Rakennettu: <b>{{x.Rakennusvuosi}}</b> Satamapaikka: <b>{{x.aluksen_satamapaikka}}</b> Pituus: <b>{{x.Pituus}} m</b></li></td>
+          Rakennettu: <b>{{x.Rakennusvuosi}}</b> Satamapaikka: <b>{{x.aluksen_satamapaikka}}</b> Pituus: <b>{{x.Pituus}} m</b>
+        </span>
+
+        </li></td>
             <!--
           <td><li *ngFor="let x of alusaddress | filter: term | paginate: {itemsPerPage: 30, currentPage: p[i]}"></li></td>
             <td><li *ngFor="let x of alusaddress | filter: term | paginate: {itemsPerPage: 30, currentPage: p[i]}"><b>{{x.Pituus}}</b></li></td>

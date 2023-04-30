@@ -8,9 +8,14 @@ li {
     list-style-type: none;
 }
 
+.alustiedot {
+    border-bottom: 1px solid rgb(112, 112, 112);
+}
+
+/*
 li:nth-child(even) {background: #e5e5e5}
 li:nth-child(odd) {background: #d4d4d4}
-
+*/
 
 .boats{
     width: 100%;

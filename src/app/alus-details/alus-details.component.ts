@@ -42,7 +42,7 @@ export class AlusDetailsComponent {
     const id = Number(this.activatedreitti.snapshot.paramMap.get('id'));
     if(id){
       this.currentIndex++;
-      const nextId = id + 1; // assuming ids are incremental
+      const nextId = id + 1; 
       this.router.navigate(['/alus-details/', nextId]);
       this.getAlusDetails(nextId);
     }
@@ -52,6 +52,7 @@ export class AlusDetailsComponent {
   goPrevious(): void{
     const id = Number(this.activatedreitti.snapshot.paramMap.get('id'));
  
+    // 0 tai alle ei toimi, id > 1
     if(id > 1){  
       this.currentIndex++;
       const prevId = id - 1; 
