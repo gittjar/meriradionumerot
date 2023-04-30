@@ -27,6 +27,10 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AlusDetailsComponent } from './alus-details/alus-details.component';
+import { LokikirjaComponent } from './lokikirja/lokikirja.component';
+
+import {NgxWebstorageModule} from 'ngx-webstorage';
+
 
 
 
@@ -46,6 +50,7 @@ import { AlusDetailsComponent } from './alus-details/alus-details.component';
     MeriradionumeroComponent,
     MeriradioItemComponent,
     AlusDetailsComponent,
+    LokikirjaComponent,
  
     
 
@@ -65,7 +70,8 @@ import { AlusDetailsComponent } from './alus-details/alus-details.component';
     MatSnackBarModule,
     NgbModule,
     NgbCollapseModule,
-    MatExpansionModule
+    MatExpansionModule,
+    NgxWebstorageModule.forRoot(),
     
   ],
   providers: [
