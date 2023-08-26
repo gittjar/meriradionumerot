@@ -7,6 +7,7 @@ import { MajakatComponent } from './majakat/majakat.component';
 import { MeriradionumeroComponent } from './meriradionumero/meriradionumero.component';
 import { AlusDetailsComponent } from './alus-details/alus-details.component';
 import { LokikirjaComponent } from './lokikirja/lokikirja.component';
+import { MainpageComponent } from './mainpage/mainpage.component';
 
 const routes: Routes = [
   // meriradio; not in use now --> connect to traficom
@@ -17,6 +18,9 @@ const routes: Routes = [
 {path : 'majakat', component: MajakatComponent},
 {path : 'alus-details/:id', component: AlusDetailsComponent},
 {path : 'lokikirja', component: LokikirjaComponent},
+{path : 'mainpage', component: MainpageComponent },
+{path : '', redirectTo: '/mainpage', pathMatch: 'full'},
+
 
 ];
 

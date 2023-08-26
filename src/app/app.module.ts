@@ -30,6 +30,7 @@ import { AlusDetailsComponent } from './alus-details/alus-details.component';
 import { LokikirjaComponent } from './lokikirja/lokikirja.component';
 
 import {NgxWebstorageModule} from 'ngx-webstorage';
+import { MainpageComponent } from './mainpage/mainpage.component';
 
 
 
@@ -51,10 +52,8 @@ import {NgxWebstorageModule} from 'ngx-webstorage';
     MeriradioItemComponent,
     AlusDetailsComponent,
     LokikirjaComponent,
+    MainpageComponent,
  
-    
-
-   
   ],
   imports: [
     BrowserModule,
