@@ -21,10 +21,11 @@ figure img {
         /* Style for the text overlay */
         .text-overlay {
             position: absolute;
-            top: 50%; /* Adjust this value to vertically center the text */
+            top: 30%; /* Adjust this value to vertically 10% the text */
             left: 50%; /* Adjust this value to horizontally center the text */
             transform: translate(-50%, -50%); /* Center the text both vertically and horizontally */
             background-color: rgba(0, 0, 0, 0.5); /* Background color with transparency */
             color: white; /* Text color */
+            font-size: 1rem;
             padding: 10px; /* Adjust the padding as needed */
         }
