@@ -31,6 +31,8 @@ import { LokikirjaComponent } from './lokikirja/lokikirja.component';
 
 import {NgxWebstorageModule} from 'ngx-webstorage';
 import { MainpageComponent } from './mainpage/mainpage.component';
+import { UniqueSatamapaikkaPipe } from './pipe.uniqueSatamapaikka'; // Adjust the path accordingly
+
 
 
 
@@ -53,6 +55,7 @@ import { MainpageComponent } from './mainpage/mainpage.component';
     AlusDetailsComponent,
     LokikirjaComponent,
     MainpageComponent,
+    UniqueSatamapaikkaPipe
  
   ],
   imports: [

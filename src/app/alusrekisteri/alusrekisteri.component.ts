@@ -40,6 +40,19 @@ export class AlusrekisteriComponent implements OnInit {
     });
   }
 
+  displayedNames: string[] = [];
+
+  // Create a method to check if a name has already been displayed
+  isNameDisplayed(name: string): boolean {
+    return this.displayedNames.includes(name);
+  }
+
+  // Create a method to add a name to the list of displayed names
+  addNameToDisplayedList(name: string): void {
+    this.displayedNames.push(name);
+  }
+  
+
     // Button functions
     changeTermHamina() {
       this.term = 'Hamina';

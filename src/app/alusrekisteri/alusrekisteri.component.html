@@ -43,9 +43,15 @@
         Listassa kaikki alle 10m pitkät alukset
       </mat-panel-description>
     </mat-expansion-panel-header>
+
     <div *ngFor="let num of Aluslist">
-      <div *ngIf="num.Pituus < 10">Pituus {{num.Pituus}}m, Aluksen nimi: {{num.nimi}} - Kotisatama: {{num.aluksen_satamapaikka}}</div>
-    </div>  </mat-expansion-panel>
+      <div *ngIf="num.Pituus <= 10">Pituus {{num.Pituus}}m, Aluksen nimi: {{num.nimi}} - Kotisatama: {{num.aluksen_satamapaikka}}</div>
+    </div>  
+    
+   
+  
+  
+  </mat-expansion-panel>
 </mat-accordion>
  
 
