@@ -51,7 +51,7 @@ a:hover {
 
 .searchTerm:hover{
     background-color: rgb(238, 238, 238);
-    border-bottom: 4px rgb(14, 55, 203) dashed;
+    border-bottom: 4px rgb(14, 55, 203) solid;
     border-top: 2px rgb(17, 65, 239) solid;
 }
 

@@ -8,11 +8,11 @@ import { ShipSignalNumber } from './models/shipsignalnumber';
 })
 export class ShipsignalnumberService {
 
- baseurl = 'https://raw.githubusercontent.com/gittjar/flags/main/shipsignalnumber.json';
+ // baseurl = 'https://raw.githubusercontent.com/gittjar/flags/main/shipsignalnumber.json';
 
   //baseurl = 'https://corsproxy.io/?https%3A%2F%2Fopendata.traficom.fi%2Fapi%2Fv9%2FAlusrekisteri';
 
-
+/*
   constructor(private http: HttpClient) {}
 
   getShipSignalNumber(): Observable <ShipSignalNumber[]>
