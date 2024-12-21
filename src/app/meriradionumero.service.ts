@@ -8,7 +8,8 @@ import { Odata } from './models/odata.model';
 })
 export class MeriradionumeroService {
 
- private API_URL: string = 'https://corsproxy.io/?https%3A%2F%2Fopendata.traficom.fi%2Fapi%2Fv8%2FMeriradionumerot%2F';
+ private API_URL: string = 
+ 'https://corsproxy.io/?url=https%3A%2F%2Fopendata.traficom.fi%2Fapi%2Fv8%2FMeriradionumerot%2F';
  //private API_URL: string = '/api';
 
  /*

@@ -1,6 +1,8 @@
+
+// alusrekisteri.component.ts
 import { Component, OnInit } from '@angular/core';
-import { Alus } from '../models/alusrekisteri'
-import { AlusService } from '../alus.service';
+import { Alus } from '../models/alusrekisteri';
+import { AlusrekisteriService } from '../alusrekisteri.service';
 import { OdataAlus } from '../models/odata.alus.model';
 import { Subscription } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -17,10 +19,10 @@ export class AlusrekisteriComponent implements OnInit {
   term = '';
   searchTerm = '';
 
-  constructor (private httpservice : AlusService, private _snackBar: MatSnackBar) {}
-  
+  constructor(private httpservice: AlusrekisteriService, private _snackBar: MatSnackBar) {}
+
   subscription!: Subscription;
-  Aluslist : Alus[] = [];
+  Aluslist: Alus[] = [];
 
   panelOpenState = false;
 
@@ -29,52 +31,44 @@ export class AlusrekisteriComponent implements OnInit {
   }
 
   getAllAlus() {
-    this.httpservice.getAlusList().subscribe({
+    this.httpservice.getAlus().subscribe({
       next: (data: OdataAlus) => {
-        this.Aluslist = data.value.filter((item: Alus) => {
-          return !item['@odata.type'];
-        });
-       this._snackBar.open('Sisältö ladattu Traficomista!', 'OK!', {duration: 3000, panelClass: ['green-snackbar']});
-      }, 
-        complete: () => console.info('Get list complete')
+        if (data && data.value) {
+          this.Aluslist = data.value.filter((item: Alus) => {
+            return !item['@odata.type'];
+          });
+          this._snackBar.open('Sisältö ladattu Traficomista!', 'OK!', { duration: 3000, panelClass: ['green-snackbar'] });
+        } else {
+          console.error('Unexpected data format:', data);
+        }
+      },
+      complete: () => console.info('Get list complete')
     });
   }
 
   displayedNames: string[] = [];
 
-  // Create a method to check if a name has already been displayed
   isNameDisplayed(name: string): boolean {
     return this.displayedNames.includes(name);
   }
 
-  // Create a method to add a name to the list of displayed names
   addNameToDisplayedList(name: string): void {
     this.displayedNames.push(name);
   }
-  
 
-    // Button functions
-    changeTermHamina() {
-      this.term = 'Hamina';
-    }
-    changeTermHelsinki() {
-      this.term = 'Helsinki';
-    }
-    changeTermOulu() {
-      this.term = 'Oulu';
-    }
-    changeTermPorvoo() {
-      this.term = 'Porvoo';
-    }
-    changeTermTurku() {
-      this.term = 'Turku';
-    }
-
-
-
-
-
-
-
+  changeTermHamina() {
+    this.term = 'Hamina';
   }
-  
+  changeTermHelsinki() {
+    this.term = 'Helsinki';
+  }
+  changeTermOulu() {
+    this.term = 'Oulu';
+  }
+  changeTermPorvoo() {
+    this.term = 'Porvoo';
+  }
+  changeTermTurku() {
+    this.term = 'Turku';
+  }
+}

@@ -1,4 +1,6 @@
 export interface Alus {
+      homePort: any;
+      name: any;
       '@odata.type': string;
       ID: number;
       alus_id: number;

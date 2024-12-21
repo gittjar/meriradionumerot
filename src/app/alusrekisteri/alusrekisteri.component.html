@@ -1,104 +1,70 @@
 
 <section class="infotable">
   <h1>Alusrekisteri</h1>
-    <h3>Datan tuottaa Traficom.<br>
-    Päivitys kerran päivässä.</h3>
-    <section class="searchbar">
-    <input
-    type="text"
-    [(ngModel)]="term"
-    class="searchTerm"
-    placeholder="Kirjoita hakusana.."
-  />
+  <h3>Datan tuottaa Traficom.<br>Päivitys kerran päivässä.</h3>
+  <section class="searchbar">
+    <input type="text" [(ngModel)]="term" class="searchTerm" placeholder="Kirjoita hakusana.." />
+    <button (click)="changeTermHamina()" class="btn btn-success">Hamina</button>
+    <button (click)="changeTermHelsinki()" class="btn btn-primary">Helsinki</button>
+    <button (click)="changeTermOulu()" class="btn btn-primary">Oulu</button>
+    <button (click)="changeTermPorvoo()" class="btn btn-success">Porvoo</button>
+    <button (click)="changeTermTurku()" class="btn btn-success">Turku</button>
+  </section>
 
-  <button (click)="changeTermHamina()" class="btn btn-success">Hamina</button>
-  <button (click)="changeTermHelsinki()" class="btn btn-primary">Helsinki</button>
-  <button (click)="changeTermOulu()" class="btn btn-primary">Oulu</button>
-  <button (click)="changeTermPorvoo()" class="btn btn-success">Porvoo</button>
-  <button (click)="changeTermTurku()" class="btn btn-success">Turku</button>
-</section>
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <button class="btn btn-secondary matnappi">yli 150m pitkät</button>
+        </mat-panel-title>
+        <mat-panel-description>
+          Listassa kaikki yli 150m pitkät alukset
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div *ngFor="let num of Aluslist">
+        <div *ngIf="num.Pituus > 150">Pituus {{num.Pituus}}m, Aluksen nimi: {{num.nimi}} - Kotisatama: {{num.aluksen_satamapaikka}}</div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
 
-<mat-accordion>
-  <mat-expansion-panel hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <button class="btn btn-secondary matnappi">yli 150m pitkät</button>
-      </mat-panel-title>
-      <mat-panel-description>
-        Listassa kaikki yli 150m pitkät alukset
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <div *ngFor="let num of Aluslist">
-      <div *ngIf="num.Pituus > 150">Pituus {{num.Pituus}}m, Aluksen nimi: {{num.nimi}} - Kotisatama: {{num.aluksen_satamapaikka}}</div>
-    </div>  </mat-expansion-panel>
-</mat-accordion>
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <button class="btn btn-secondary matnappi">alle 10m pitkät</button>
+        </mat-panel-title>
+        <mat-panel-description>
+          Listassa kaikki alle 10m pitkät alukset
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div *ngFor="let num of Aluslist">
+        <div *ngIf="num.Pituus <= 10">Pituus {{num.Pituus}}m, Aluksen nimi: {{num.nimi}} - Kotisatama: {{num.aluksen_satamapaikka}}</div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
 
-<mat-accordion>
-  <mat-expansion-panel hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <button class="btn btn-secondary matnappi">alle 10m pitkät</button>
-      </mat-panel-title>
-      <mat-panel-description>
-        Listassa kaikki alle 10m pitkät alukset
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-
-    <div *ngFor="let num of Aluslist">
-      <div *ngIf="num.Pituus <= 10">Pituus {{num.Pituus}}m, Aluksen nimi: {{num.nimi}} - Kotisatama: {{num.aluksen_satamapaikka}}</div>
-    </div>  
-    
-   
-  
-  
-  </mat-expansion-panel>
-</mat-accordion>
- 
-
-
-
-
-
-
-
-
-    <table *ngFor="let id of [1]; let i = index;" class="table boats">
-
-        <thead>
-        <tr>
-          <!-- <th class="id-kapea">Aluksen ID</th> --> 
-            <th class="th1">Aluksen tiedot</th>
-
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-         <!--  <td><li *ngFor="let x of boatInfo.value | paginate: {itemsPerPage: 30, currentPage: p[i]}">{{ x.ID }}</li></td> --> 
-          <td><li *ngFor="let x of Aluslist | filter: term | paginate: {itemsPerPage: 100, currentPage: p[i]}">
-            
+  <table *ngFor="let id of [1]; let i = index;" class="table boats">
+    <thead>
+      <tr>
+        <th class="th1">Aluksen tiedot</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <li *ngFor="let x of Aluslist | filter: term | paginate: { itemsPerPage: 100, currentPage: p[i] }">
             <span *ngIf="x.Rakennuspaikka" class="alustiedot">
-            Alus: 
-            <a href="#" [routerLink]="['/alus-details/', x.ID]">
-            <b>{{x.nimi}}</b> 
-            </a>
-          
-          Rakennuspaikka: <b>{{x.Rakennuspaikka}}</b> 
-       
-          Rakennettu: <b>{{x.Rakennusvuosi}}</b> Satamapaikka: <b>{{x.aluksen_satamapaikka}}</b> Pituus: <b>{{x.Pituus}} m</b>
-        </span>
-
-        </li></td>
-            <!--
-          <td><li *ngFor="let x of alusaddress | filter: term | paginate: {itemsPerPage: 30, currentPage: p[i]}"></li></td>
-            <td><li *ngFor="let x of alusaddress | filter: term | paginate: {itemsPerPage: 30, currentPage: p[i]}"><b>{{x.Pituus}}</b></li></td>
--->
-        </tr>
-        </tbody>
-        <pagination-controls class="paginationcolor" (pageChange)="p[i] = $event"></pagination-controls> 
-
-        
-
-        </table>
-        
+              Alus:
+              <a href="#" [routerLink]="['/alus-details/', x.ID]">
+                <b>{{x.nimi}}</b>
+              </a>
+              Rakennuspaikka: <b>{{x.Rakennuspaikka}}</b>
+              Rakennettu: <b>{{x.Rakennusvuosi}}</b> Satamapaikka: <b>{{x.aluksen_satamapaikka}}</b> Pituus: <b>{{x.Pituus}} m</b>
+            </span>
+          </li>
+        </td>
+      </tr>
+    </tbody>
+    <pagination-controls class="paginationcolor" (pageChange)="p[i] = $event"></pagination-controls>
+  </table>
 </section>
-
