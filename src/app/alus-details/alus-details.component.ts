@@ -3,11 +3,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Alus } from '../models/alusrekisteri';
 import { AlusService } from '../alus.service';
 import { Location } from '@angular/common';
+import { DatePipe } from '@angular/common'; // Import DatePipe
 
 @Component({
   selector: 'app-alus-details',
   templateUrl: './alus-details.component.html',
-  styleUrls: ['./alus-details.component.css']
+  styleUrls: ['./alus-details.component.css'],
+  providers: [DatePipe] // Add DatePipe to providers
 })
 export class AlusDetailsComponent implements OnInit {
 
@@ -20,7 +22,8 @@ export class AlusDetailsComponent implements OnInit {
     private router: Router,
     private activatedreitti: ActivatedRoute,
     private location: Location,
-    private alusService: AlusService
+    private alusService: AlusService,
+    private datePipe: DatePipe // Inject DatePipe
   ) {}
 
   ngOnInit() {
@@ -33,8 +36,13 @@ export class AlusDetailsComponent implements OnInit {
   getAlusDetails(ID: number): void {
     this.alusService.getAlusDetails(ID).subscribe(
       (data: Alus) => {
-        this.alusdetails = data;
-        this.alus = data;
+        // Filter the data to show only records with more detailed information
+        if (data.Rakennusvuosi) {
+          this.alusdetails = data;
+          this.alus = data;
+        } else {
+          console.log('No detailed information available for this record.');
+        }
       },
       (error: any) => {
         console.log('http-error:');
@@ -68,5 +76,10 @@ export class AlusDetailsComponent implements OnInit {
   // goback napin metodi kyseessa
   goBack(): void {
     this.router.navigate(['/alusrekisteri/']);
+  }
+
+  // Method to format date
+  formatDate(date: string): string | null {
+    return this.datePipe.transform(date, 'yyyy');
   }
 }

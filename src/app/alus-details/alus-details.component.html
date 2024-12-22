@@ -25,6 +25,8 @@
           <li class="list-group-item">Tilakoodi: {{alusdetails?.Tilakoodi}}</li>
           <li class="list-group-item">Ensirekisteröintipäivä: {{alusdetails?.Ensirekisterointipvm}}</li>
           <li class="list-group-item">Rakennuspaikka: {{alusdetails?.Rakennuspaikka}}</li>
+          
+          <li class="list-group-item">Rakennusvuosi: {{ formatDate(alusdetails?.Rakennusvuosi) }}</li>
           <li class="list-group-item">Aluksen satamapaikka: {{alusdetails?.aluksen_satamapaikka}}</li>
           <li class="list-group-item">Kantavuus: {{alusdetails?.Kantavuus}} t</li>
           <li class="list-group-item">Jääluokkakoodi: {{alusdetails?.JaaluokkaKoodi}}</li>
