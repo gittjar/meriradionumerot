@@ -22,7 +22,7 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <div *ngFor="let num of Aluslist">
-        <div *ngIf="num.Pituus > 150">Pituus {{num.Pituus}}m, Aluksen nimi: {{num.nimi}} - Kotisatama: {{num.aluksen_satamapaikka}}</div>
+        <div *ngIf="num.Pituus !== null && num.Pituus > 150">Pituus {{num.Pituus}}m, Aluksen nimi: {{num.nimi}} - Kotisatama: {{num.aluksen_satamapaikka}}</div>
       </div>
     </mat-expansion-panel>
   </mat-accordion>
@@ -38,7 +38,7 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <div *ngFor="let num of Aluslist">
-        <div *ngIf="num.Pituus <= 10">Pituus {{num.Pituus}}m, Aluksen nimi: {{num.nimi}} - Kotisatama: {{num.aluksen_satamapaikka}}</div>
+        <div *ngIf="num.Pituus !== null && num.Pituus <= 10">Pituus {{num.Pituus}}m, Aluksen nimi: {{num.nimi}} - Kotisatama: {{num.aluksen_satamapaikka}}</div>
       </div>
     </mat-expansion-panel>
   </mat-accordion>

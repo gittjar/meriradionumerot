@@ -12,20 +12,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class MeriradionumeroComponent implements OnInit, OnDestroy {
 
-MeriradioList: any;
+  subscription!: Subscription;
+  listMeriradionumerot: Meriradionumerot[] = [];
 
-subscription!: Subscription;
-listMeriradionumerot: Meriradionumerot [] = [];
-
-  //Meriradionumero = '/api';
-  constructor (private hpservice : MeriradionumeroService, private _snackBar: MatSnackBar) {
-  }
+  constructor(private hpservice: MeriradionumeroService, private _snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
-   this.getAllMeriradioList();
-   }
+    this.getAllMeriradioList();
+  }
 
-   ngOnDestroy(): void {
+  ngOnDestroy(): void {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
@@ -34,14 +30,12 @@ listMeriradionumerot: Meriradionumerot [] = [];
   getAllMeriradioList() {
     this.hpservice.getMeriradioList().subscribe({
       next: (data: Odata) => {
-        this.listMeriradionumerot = data.value.filter((item: Meriradionumerot) => {
-          return !item['@odata.type'];
-        });
-        this._snackBar.open('Sisältö ladattu Traficomista!', 'OK!', {duration: 3000, panelClass: ['green-snackbar']});
-      }, 
-        complete: () => console.info('Get list complete')
+        this.listMeriradionumerot = data.value;
+        this._snackBar.open('Sisältö ladattu Traficomista!', 'OK!', { duration: 3000, panelClass: ['green-snackbar'] });
+      },
+      complete: () => console.info('Get list complete')
     });
   }
-  }
+}
 
 

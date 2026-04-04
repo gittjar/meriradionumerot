@@ -1,8 +1,54 @@
-<div class="container">
-    <figure>
-    <img src="../../assets/img/boatupside.jpeg" class="mainimage">
-</figure>
-    <div class="text-overlay">
-        Tämä ohjelma on Boatcaptain. Hyödyllinen ohjelma vesillä kulkijoille.
-    </div>
-</div>
+<!-- Hero -->
+<section class="bc-hero">
+  <div class="bc-hero__overlay"></div>
+  <div class="bc-hero__content">
+    <span class="bc-hero__anchor">&#9875;</span>
+    <h1 class="bc-hero__title">Boatcaptain</h1>
+    <p class="bc-hero__subtitle">Hyödyllinen sovellus vesillä kulkijoille</p>
+    <a routerLink="/alusrekisteri" class="bc-hero__cta">Avaa Alusrekisteri</a>
+  </div>
+</section>
+
+<!-- Feature cards -->
+<section class="bc-features">
+  <div class="bc-features__grid">
+
+    <a routerLink="/meriradio" class="bc-feat-card">
+      <div class="bc-feat-card__icon"><mat-icon>radio</mat-icon></div>
+      <h3 class="bc-feat-card__title">Meriradionumerot</h3>
+      <p class="bc-feat-card__desc">Hae alusten MMSI-numerot ja kutsutunnukset Traficomin rekisteristä.</p>
+      <span class="bc-feat-card__arrow">&#8594;</span>
+    </a>
+
+    <a routerLink="/alusrekisteri" class="bc-feat-card">
+      <div class="bc-feat-card__icon"><mat-icon>directions_boat</mat-icon></div>
+      <h3 class="bc-feat-card__title">Alusrekisteri</h3>
+      <p class="bc-feat-card__desc">Selaa ja hae suomalaisia rekisteröityjä aluksia teknisineen tietoineen.</p>
+      <span class="bc-feat-card__arrow">&#8594;</span>
+    </a>
+
+    <a routerLink="/signaaliliput" class="bc-feat-card">
+      <div class="bc-feat-card__icon"><mat-icon>flag</mat-icon></div>
+      <h3 class="bc-feat-card__title">Signaaliliput</h3>
+      <p class="bc-feat-card__desc">Kansainväliset signaalilipustot ja niiden merkitykset.</p>
+      <span class="bc-feat-card__arrow">&#8594;</span>
+    </a>
+
+    <a routerLink="/majakat" class="bc-feat-card">
+      <div class="bc-feat-card__icon"><mat-icon>lightbulb</mat-icon></div>
+      <h3 class="bc-feat-card__title">Majakat</h3>
+      <p class="bc-feat-card__desc">Suomen rannikkojen ja sisävesien majakkatiedot.</p>
+      <span class="bc-feat-card__arrow">&#8594;</span>
+    </a>
+
+    <a routerLink="/lokikirja" class="bc-feat-card">
+      <div class="bc-feat-card__icon"><mat-icon>menu_book</mat-icon></div>
+      <h3 class="bc-feat-card__title">Lokikirja</h3>
+      <p class="bc-feat-card__desc">Kirjaa reittisi ja matkasi digitaaliseen lokikirjaan.</p>
+      <span class="bc-feat-card__arrow">&#8594;</span>
+    </a>
+
+  </div>
+
+  <p class="bc-source">Data: Traficom – päivitys kerran päivässä</p>
+</section>

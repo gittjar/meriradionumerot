@@ -9,8 +9,8 @@ import { Alus } from './models/alusrekisteri';
 })
 export class AlusService {
 
-  baseurl = 'https://corsproxy.io/?url=https%3A%2F%2Fopendata.traficom.fi%2Fapi%2Fv9%2FAlusrekisteri';
-  baseurlbyid = 'https://corsproxy.io/?url=https://opendata.traficom.fi/api/v9/Alusrekisteri(';
+  private baseurl = 'https://corsproxy.io/?url=https%3A%2F%2Fopendata.traficom.fi%2Fapi%2Fv13%2FAlusrekisteri';
+  private baseurlbyid = 'https://corsproxy.io/?url=https%3A%2F%2Fopendata.traficom.fi%2Fapi%2Fv13%2FAlusrekisteri(';
 
   constructor(private http: HttpClient) {}
 

@@ -1,14 +1,91 @@
-/* You can add global styles to this file, and also import other style files */
+/* ===== Maritime Theme – Global Styles ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  --navy-900: #0a1628;
+  --navy-700: #12284a;
+  --navy-500: #1a4a7a;
+  --navy-300: #2d7ab5;
+  --navy-100: #d6eaf8;
+  --gold:     #c9a84c;
+  --white:    #ffffff;
+  --gray-100: #f4f7fb;
+  --gray-300: #c8d8e8;
+  --text-muted: #6b8aad;
+}
 
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
 
+body {
+  margin: 0;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  background-color: var(--gray-100);
+  color: var(--navy-900);
+}
+
+/* ── Snackbar ── */
 .green-snackbar {
-    color: white;
+  background-color: var(--navy-500) !important;
+  color: var(--white) !important;
+  border-left: 4px solid var(--gold);
 }
 .green-snackbar button {
-    background-color: rgb(41, 1, 40);
-    border-bottom: 2px hotpink solid;
-    border-radius: none;
+  color: var(--gold) !important;
+  background: transparent !important;
+}
+
+/* ── Shared card style ── */
+.bc-card {
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(10, 22, 40, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.bc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(10, 22, 40, 0.15);
+}
+
+/* ── Section headings ── */
+.bc-section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--navy-700);
+  border-left: 4px solid var(--gold);
+  padding-left: 12px;
+  margin-bottom: 1.2rem;
+}
+
+/* ── Tables ── */
+.bc-table th {
+  background-color: var(--navy-700);
+  color: var(--white);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+.bc-table tbody tr:hover {
+  background-color: var(--navy-100);
+}
+
+/* ── Search input ── */
+.bc-search {
+  border: 2px solid var(--navy-300);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.bc-search:focus {
+  border-color: var(--gold);
+}
+
+/* ── Pagination ── */
+.paginationcolor ngx-pagination .current {
+  background: var(--navy-700) !important;
+  border-color: var(--navy-700) !important;
 }

@@ -1,20 +1,48 @@
 
+<nav class="bc-navbar navbar navbar-expand-lg">
+  <div class="container-fluid px-3">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand mx-3" routerLink="/mainpage">Boatcaptain</a>
-  <button class="navbar-toggler" type="button" (click)="toggleNavbar = !toggleNavbar" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup" [ngbCollapse]="toggleNavbar">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" routerLink="/meriradio">Meriradionumerot</a>
-      <a class="nav-item nav-link" routerLink="/alusrekisteri">Alusrekisteri</a>
-      <a class="nav-item nav-link" routerLink="/signaaliliput">Signaaliliput</a>
-      <a class="nav-item nav-link disabled" routerLink="/">Solmut</a>
-      <a class="nav-item nav-link" routerLink="/majakat">Majakat</a>
-      <a class="nav-item nav-link" routerLink="/lokikirja">Lokikirja</a>
+    <a class="bc-brand navbar-brand" routerLink="/mainpage">
+      <span class="bc-brand-icon">&#9875;</span>
+      Boatcaptain
+    </a>
 
+    <button class="navbar-toggler bc-toggler" type="button"
+      (click)="toggleNavbar = !toggleNavbar"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" [ngbCollapse]="toggleNavbar">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link bc-link" routerLink="/meriradio" routerLinkActive="bc-link--active">
+            <mat-icon class="bc-nav-icon">radio</mat-icon> Meriradionumerot
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bc-link" routerLink="/alusrekisteri" routerLinkActive="bc-link--active">
+            <mat-icon class="bc-nav-icon">directions_boat</mat-icon> Alusrekisteri
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bc-link" routerLink="/signaaliliput" routerLinkActive="bc-link--active">
+            <mat-icon class="bc-nav-icon">flag</mat-icon> Signaaliliput
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bc-link" routerLink="/majakat" routerLinkActive="bc-link--active">
+            <mat-icon class="bc-nav-icon">lightbulb</mat-icon> Majakat
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bc-link" routerLink="/lokikirja" routerLinkActive="bc-link--active">
+            <mat-icon class="bc-nav-icon">menu_book</mat-icon> Lokikirja
+          </a>
+        </li>
+      </ul>
     </div>
+
   </div>
 </nav>
 

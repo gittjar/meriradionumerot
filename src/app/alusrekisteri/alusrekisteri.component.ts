@@ -1,10 +1,7 @@
-
-// alusrekisteri.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Alus } from '../models/alusrekisteri';
-import { AlusrekisteriService } from '../alusrekisteri.service';
+import { AlusService } from '../alus.service';
 import { OdataAlus } from '../models/odata.alus.model';
-import { Subscription } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -15,28 +12,20 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class AlusrekisteriComponent implements OnInit {
 
   p: number[] = [];
-  collection: any[] = [];
   term = '';
-  searchTerm = '';
-
-  constructor(private httpservice: AlusrekisteriService, private _snackBar: MatSnackBar) {}
-
-  subscription!: Subscription;
   Aluslist: Alus[] = [];
 
-  panelOpenState = false;
+  constructor(private alusService: AlusService, private _snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.getAllAlus();
   }
 
   getAllAlus() {
-    this.httpservice.getAlus().subscribe({
+    this.alusService.getAlusList().subscribe({
       next: (data: OdataAlus) => {
         if (data && data.value) {
-          this.Aluslist = data.value.filter((item: Alus) => {
-            return !item['@odata.type'];
-          });
+          this.Aluslist = this.removeDuplicates(data.value);
           this._snackBar.open('Sisältö ladattu Traficomista!', 'OK!', { duration: 3000, panelClass: ['green-snackbar'] });
         } else {
           console.error('Unexpected data format:', data);
@@ -46,29 +35,28 @@ export class AlusrekisteriComponent implements OnInit {
     });
   }
 
-  displayedNames: string[] = [];
-
-  isNameDisplayed(name: string): boolean {
-    return this.displayedNames.includes(name);
+  removeDuplicates(alusList: Alus[]): Alus[] {
+    const seen = new Set<number>();
+    // Prefer records with Rakennusvuosi (omistajuustyyppi=3), then any
+    const withDetails = alusList.filter(a => a.Rakennusvuosi !== null);
+    const withoutDetails = alusList.filter(a => a.Rakennusvuosi === null);
+    const result: Alus[] = [];
+    for (const item of [...withDetails, ...withoutDetails]) {
+      if (!seen.has(item.alus_id)) {
+        seen.add(item.alus_id);
+        result.push(item);
+      }
+    }
+    return result;
   }
 
-  addNameToDisplayedList(name: string): void {
-    this.displayedNames.push(name);
+  trackByFn(index: number, item: Alus): number {
+    return item.alus_id;
   }
 
-  changeTermHamina() {
-    this.term = 'Hamina';
-  }
-  changeTermHelsinki() {
-    this.term = 'Helsinki';
-  }
-  changeTermOulu() {
-    this.term = 'Oulu';
-  }
-  changeTermPorvoo() {
-    this.term = 'Porvoo';
-  }
-  changeTermTurku() {
-    this.term = 'Turku';
-  }
+  changeTermHamina() { this.term = 'Hamina'; }
+  changeTermHelsinki() { this.term = 'Helsinki'; }
+  changeTermOulu() { this.term = 'Oulu'; }
+  changeTermPorvoo() { this.term = 'Porvoo'; }
+  changeTermTurku() { this.term = 'Turku'; }
 }
